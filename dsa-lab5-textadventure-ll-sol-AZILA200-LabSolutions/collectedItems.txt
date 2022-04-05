@@ -1,0 +1,3 @@
+3,The coveted List data structure!
+8,The Gang of Four Design Patterns book!
+1,The magic for loop ...

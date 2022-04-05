@@ -1,0 +1,64 @@
+Hallway,SOUTH:EAST::,0,Nothing here!
+Hallway,WEST:EAST::,0,Nothing here!
+Hallway,WEST:EAST::,0,Nothing here!
+Hallway,WEST:EAST:SOUTH:,0,Nothing here!
+Hallway,WEST:EAST::,0,Nothing here!
+Hallway,WEST:EAST::,0,Nothing here!
+Hallway,WEST:EAST:SOUTH:,0,Nothing here!
+Hallway,WEST:SOUTH::,0,Nothing here!
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Kitchen,SOUTH:EAST::,0,Nothing here!
+Kitchen,WEST:EAST::,0,Nothing here!
+Scullery,WEST:NORTH::,0,Nothing here!
+Dusty old room,SOUTH:EAST::,0,Nothing here!
+Rear Turret room,WEST:::,5,The golden semi-colon (;)
+Hallway,NORTH:EAST::,0,Nothing here!
+Hallway,NORTH:SOUTH:WEST:,0,Nothing here!
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Dark Alcove,SOUTH:EAST::,1,The magic for loop ...
+Small dark room,WEST:EAST::,0,Nothing here!
+Spiral staircase,WEST:NORTH::,0,Nothing here!
+Hallway,SOUTH:EAST::,0,Nothing here!
+Slippery steps,WEST:SOUTH::,0,Nothing here!
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Dead end,NORTH:::,0,Nothing here!
+Gloomy passageway,NORTH:SOUTH::,0,Nothing here!
+Hallway,NORTH:SOUTH:EAST:,0,Nothing here!
+Hallway,WEST:EAST::,0,Nothing here!
+Hallway,WEST:EAST::,3,The coveted List data structure!
+Trophy room,WEST:EAST::,0,Nothing here!
+Cellar,NORTH:SOUTH::,0,Nothing here!
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Cloak room,SOUTH:::,0,Nothing here!
+Hallway,NORTH:EAST:SOUTH:,0,Nothing here!
+Sitting Room,WEST:NORTH:SOUTH:,0,Nothing here!
+Secret Room,SOUTH:::,2,The Stack data structure - look out for overflows!
+Dead end,SOUTH:::,0,Nothing here!
+Dining Room,NORTH:::,0,Nothing here!
+Cellar,NORTH:::,4,A collection of mathematical operators ...
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Closet,NORTH:EAST::,0,Nothing here!
+Hallway,NORTH:WEST:SOUTH:,0,Nothing here!
+Library,NORTH:EAST::,8,The Gang of Four Design Patterns book!
+Study,WEST:NORTH::,0,Nothing here!
+Poorly light room,NORTH:SOUTH:EAST:,0,Nothing here!
+Hallway,WEST:EAST::,0,Nothing here!
+Eerie room,WEST:::,6,For the select few the if will do ...
+Hallway,NORTH:SOUTH::,0,Nothing here!
+Verandah,SOUTH:EAST::,9,The mystic generic object!
+Front porch,WEST:NORTH:SOUTH:,0,Nothing here!
+Front Tower,EAST:::,7,The Pseudocode algorithm for the Bubble Sort!
+Hallway,WEST:EAST::,0,Nothing here!
+Upper Gallery,WEST:NORTH::,10,Whoa! The coveted Binary Search Tree data structure ...
+Hallway,SOUTH:EAST::,0,Nothing here!
+Hallway,WEST:EAST:SOUTH:,0,Nothing here!
+Hallway,WEST:NORTH::,0,Nothing here!
+Garden Path,NORTH:EAST::,0,Nothing here!
+Garden Path,WEST:EAST:NORTH:,0,Nothing here!
+Garden Path,WEST:EAST::,0,Nothing here!
+Garden Path,WEST:EAST::,0,Nothing here!
+Rough patch of ground,WEST:EAST::,0,Nothing here!
+Cellar,WEST:EAST:NORTH:,0,Nothing here!
+Hallway,WEST:EAST:NORTH:,0,Nothing here!
+Dead end,WEST:::,0,Nothing here!

@@ -1,0 +1,316 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "controllers.controller"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_104069929 { 
+   	label=model
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Maze104069929[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Maze</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   theMaze: Room[][] [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addToDataSet(row: int, col: int, aValue: Room)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getValueFromDataSet(row: int, col: int): Room</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PickUps104069929[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PickUps</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   pickup: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pickupID: int [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Room104069929[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Room</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   aPickup: PickUps [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   description: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   possibleMoves: Direction[] [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ convertToDirection(directions: String[]): Direction[]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1714548649 { 
+   	label=controllers
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   controller1714548649[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)controller</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   aPickUp: PickUps [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   aRoomView: roomView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   col: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   inputHelper: InputHelper [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   listOfPickUps: ADTSingleLinkedList&lt;PickUps&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   row: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   theDirection: Direction [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   theMazeDAO: mazeDAOImpl [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- headingEast()</TD></TR>
+<TR><TD ALIGN="LEFT" >- headingNorth()</TD></TR>
+<TR><TD ALIGN="LEFT" >- headingSouth()</TD></TR>
+<TR><TD ALIGN="LEFT" >- headingWest()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ run()</TD></TR>
+<TR><TD ALIGN="LEFT" >- theInstructions()</TD></TR>
+<TR><TD ALIGN="LEFT" >- theMenu()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1938332534 { 
+   	label=datastructures
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ADTSingleLinkedList1938332534[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ADTSingleLinkedList&lt;E&gt;</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   head: listNode&lt;E&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   listSize: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createList()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ find(theNode: E): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ find(theLastName: String): listNode&lt;E&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ front(): listNode&lt;E&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ insert(theNode: E)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ length(): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printList()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ remove(theNode: E)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+listNode1938332534[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)listNode&lt;E&gt;</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   nextNode: listNode [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nodeData: E [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_3075873 { 
+   	label=daos
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   DAO3075873[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DAO</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getPickUps(row: int, col: int): PickUps</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getRoom(row: int, col: int): Room</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadFromFile()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+mazeDAOImpl3075873[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)mazeDAOImpl</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   theMaze: Maze [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getPickUps(row: int, col: int): PickUps</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getRoom(row: int, col: int): Room</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loadFromFile()</TD></TR>
+<TR><TD ALIGN="LEFT" >- stripQuotes(str: String): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_3619493 { 
+   	label=view
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   roomView3619493[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)roomView</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ showRoom(aRoom: Room)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_805824133 { 
+   	label=helpers
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   InputHelper805824133[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)InputHelper</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   reader: Scanner [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ readCharacter(prompt: String): char</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readCharacter(prompt: String, validCharacters: String): char</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readDate(prompt: String, format: String): Calendar</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readDouble(prompt: String): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readInt(prompt: String, max: int, min: int): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readInt(prompt: String): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ readString(prompt: String): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+ADTSingleLinkedList1938332534 -> listNode1938332534[label="head
+[0..1]"];
+DAO3075873 -> mazeDAOImpl3075873[arrowhead=none, arrowtail=empty, dir=both];
+Maze104069929 -> Room104069929[label="theMaze
+[0..*]"];
+controller1714548649 -> ADTSingleLinkedList1938332534[label="listOfPickUps
+[0..1]"];
+controller1714548649 -> InputHelper805824133[label="inputHelper
+[0..1]"];
+controller1714548649 -> PickUps104069929[label="aPickUp
+[0..1]"];
+controller1714548649 -> PickUps104069929[label="listOfPickUps
+[0..1]"];
+controller1714548649 -> mazeDAOImpl3075873[label="theMazeDAO
+[0..1]"];
+controller1714548649 -> roomView3619493[label="aRoomView
+[0..1]"];
+mazeDAOImpl3075873 -> Maze104069929[label="theMaze
+[0..1]"];
+    
+}
+@enduml
